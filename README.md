@@ -1,15 +1,15 @@
 # Falcon V1.0.0
 
 A high performance, stable, low-latency custom client for MooMoo.io. 
-Built from the ground up, the client offers high-level automation features as well as GoL improvements. 
+Built from the ground up, the client offers high-level automation features as well as QoL improvements. 
 With over 50+ toggles, the client offers customization for all play styles.
 
 ## Installation
-For those who don't care about the code, simply go to **Releases** page and download the unpacked extension for your prefered version. 
+For those who don't care about the code, simply go to **Releases** page and download the unpacked extension for your preferred version. 
 It is the only place to install and download the safe extension for the client.
 > For a tutorial of how to load unpacked extensions, go to **YouTube** and search for "how to load unpacked extension in chrome" and pick any video that pops up.
 
-Below is the instructions to download a local copy of the client.
+Below are the instructions to download a local copy of the client.
 ### Prerequisites
 - Node.js
 - NPM
@@ -48,6 +48,25 @@ Don't expect anything to work perfectly when you have 912381032910 ms.
 ### Server Selection
 The client, by default, only allows you to select from sandbox servers.
 This is intentional, this is a sandbox-only client.
+
+## Client Features
+Brief list of all the client's features:
+- Auto Healing
+    - "if it isn't 100+ damage in one tick, it is healable" - duckman
+- Auto Placement
+    - Includes replacer and preplacer
+    - Uses deterministic physics simulation to grade placement angles
+- Dynamic/Velocity One Tick
+- Knockback Attacks (and Instakills)
+    - Uses deterministic physics simulation
+- Auto Push (with Pathfinding)
+- Auto Respawn
+- Packet Management System
+    - Never packet-spam / get rate limited!
+- Packet Recorder and Replayer
+- Apple Insta / Spike Tick / Shame Grind
+- Projectile Syncs
+    - Melee hit sync with any traveling projectile for a perfect onetick kill
 
 ## License
 This project is licensed under GNU GPLv3.
