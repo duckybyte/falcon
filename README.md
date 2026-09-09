@@ -26,8 +26,7 @@ Below are the instructions to download a local copy of the client.
 6. Run ```npm run dev:start``` to start the local backend that the dev extension requires.
 
 ## Contribution / Code Modification
-This specific project is **NOT** opened to community contributions. 
-Although not enforced, we would like to informally request that all modified versions of Falcon are to be rebranded.
+This specific project is **NOT** opened to community contributions.
 
 ## Client Guide / Information
 This client requires you to have a reasonable ping/latency.
