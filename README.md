@@ -48,25 +48,6 @@ Don't expect anything to work perfectly when you have 912381032910 ms.
 The client, by default, only allows you to select from sandbox servers.
 This is intentional, this is a sandbox-only client.
 
-## Client Features
-Brief list of all the client's features:
-- Auto Healing
-    - "if it isn't 100+ damage in one tick, it is healable" - duckman
-- Auto Placement
-    - Includes replacer and preplacer
-    - Uses deterministic physics simulation to grade placement angles
-- Dynamic/Velocity One Tick
-- Knockback Attacks (and Instakills)
-    - Uses deterministic physics simulation
-- Auto Push (with Pathfinding)
-- Auto Respawn
-- Packet Management System
-    - Never packet-spam / get rate limited!
-- Packet Recorder and Replayer
-- Apple Insta / Spike Tick / Shame Grind
-- Projectile Syncs
-    - Melee hit sync with any traveling projectile for a perfect onetick kill
-
 ## License
 This project is licensed under GNU GPLv3.
 > For more information about **GNU GPLv3**, click [here](https://choosealicense.com/licenses/gpl-3.0/).
