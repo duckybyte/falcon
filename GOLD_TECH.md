@@ -16,7 +16,7 @@ Here are all the features that are impossible and healable without soldier if yo
 
 stuff that it allows us to make or do:
 - (almost) perfectly accurate kb simulations (of course MooMoo.io rounds/truncates floating numbers before emitting them to clients but using gold tech we can achieve the highest accuracy)
-- the tech this doc will talk about
+- the tech this niche feature will talk about
 
 because MooMoo.io's updates kinda like this:
 ```js
