@@ -86,9 +86,9 @@ here's the general process:
 
 > - do the math it all works out, of course polearm is required (works at any variant)
 > - and no, raw healing (using food) for antionetick is impossible because js's call stack is uninterruptible
-> - we will assume projectiles updates are after players updates, but it doesn't really change much since that changes is that we need to be indexed lower
+> - we will assume projectiles updates are after players updates, but it doesn't really change much since all that changes is that we need to be indexed lower
 
-because of gold tech, we know that this is possible (which it is) and we can reliably execute this without wondering why it magically doesn't work
+because of gold tech, we know that this is possible (which it is) and we can reliably execute this relibly without wondering why it magically doesn't work
 > basically wondering why it worked yesterday but doesn't work today
 
 here's a simple code example:
