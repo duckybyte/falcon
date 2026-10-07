@@ -1,0 +1,129 @@
+:root {
+    --bg-primary: #2e2e2e;
+    --bg-secondary: #1b1b1b;
+    --border-color: #535353;
+
+    --bg-white: rgba(255, 255, 255, .08);
+    --bg-white-2: rgba(255, 255, 255, .12);
+    --bg-white-3: rgba(255, 255, 255, .2);
+
+    --bg-black: rgba(0, 0, 0, .12);
+
+    --theme-primary: #f97316;
+    --theme-primary-rgb: 249, 115, 22;
+    --theme-secondary: #fb923c;
+    --theme-secondary-rgb: 251, 146, 60;
+
+    --border-muted: rgba(255, 255, 255, 0.04);
+
+    --text-primary: #878787;
+    --generic-white: #e2e2e2;
+    --generic-white-rgb: 226, 226, 226;
+
+    --generic-white-2: #b0b0b0;
+    --generic-white-3: #626262;
+
+    --generic-dark-rgb: 16, 18, 22;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    overflow: none;
+    background-color: var(--bg-primary);
+}
+
+.dashboard-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.setting-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 480px;
+    padding: 28px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.extension-title {
+    font-size: 1.8rem;
+    color: var(--generic-white);
+    font-weight: 500;
+    letter-spacing: 1px;
+    width: 480px;
+    padding: 0px 5px;
+}
+
+.setting-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.input-label {
+    color: var(--generic-white);
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.input-description {
+    color: var(--generic-white-2);
+    font-size: .8rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+select,
+input,
+button {
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    outline: none;
+    color: var(--generic-white);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+}
+
+select,
+button {
+    cursor: pointer;
+}
+
+#save-config-btn {
+    background-color: var(--theme-primary);
+    color: var(--generic-white);
+    border: none;
+    font-size: .9rem;
+    border-radius: 10px;
+}
+
+#save-config-btn.disabled {
+    background-color: var(--generic-white-3);
+    pointer-events: none;
+}
+
+#save-config-btn:hover {
+    background-color: var(--theme-secondary);
+}

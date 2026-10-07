@@ -1,0 +1,58 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "target": "es2025",
+        "paths": {
+            "@combat-modules/*": [
+                "./src/core/mod/combat/modules/*"
+            ],
+            "@combat-utils/*": [
+                "./src/core/mod/combat/utils/*"
+            ],
+            "@simulation/*": [
+                "./src/core/mod/simulation/*"
+            ],
+            "@placing/*": [
+                "./src/core/mod/combat/placing/*"
+            ],
+            "@menu/*": [
+                "./src/core/menu/*"
+            ],
+            "@core/*": [
+                "./src/utils/socket/*",
+                "./src/core/*"
+            ],
+            "@utils/*": [
+                "./src/utils/utils/*",
+                "./src/utils"
+            ],
+            "@mod-types/*": [
+                "./src/utils/types/*"
+            ],
+            "@constants/*": [
+                "./src/constants/*",
+                "./src/utils/constants/*"
+            ],
+            "@ui/*": [
+                "./src/ui/*"
+            ],
+            "@rendering/*": [
+                "./src/rendering/*"
+            ],
+            "@services/*": [
+                "./src/services/*"
+            ],
+            "@root/*": [
+                "./src/*"
+            ]
+        },
+        "types": [
+            "cloudflare-turnstile",
+            "./src/types"
+        ],
+    },
+    "include": [
+        "src/**/*",
+        "**/*"
+    ]
+}

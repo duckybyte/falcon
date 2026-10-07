@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Falcon Dashboard</title>
+    <link rel="stylesheet" href="src/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="extension-title">Falcon Settings</div>
+        <div class="setting-container">
+            <section class="setting-section">
+                <label for="#access-token-input" class="input-label">Access Token</label>
+                <span class="input-description">Enter your authorization token for mod access.</span>
+                <input id="access-token-input" type="password" placeholder="Enter access token here">
+            </section>
+
+            <section class="setting-section">
+                <label for="#version-selector" class="input-label">Version Selection</label>
+                <span class="input-description">Select the mod version you want the launcher to automatically
+                    launch.</span>
+                <select id="version-selector">
+                    <option value="latest">Latest Version</option>
+                </select>
+            </section>
+
+            <section class="setting-section" style="margin-top: 20px; padding: 0px;">
+                <button id="save-config-btn">Save Configuration</button>
+            </section>
+        </div>
+    </div>
+
+    <script type="module" src="/src/dashboard.ts"></script>
+</body>
+
+</html>

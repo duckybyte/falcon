@@ -1,0 +1,22 @@
+{
+    "Export Default Class": {
+        "scope": "javascript,typescript",
+        "prefix": "edc",
+        "body": [
+            "export default class ${TM_FILENAME_BASE} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Export default class named after the file"
+    },
+    "Export Default Function": {
+        "scope": "javascript,typescript",
+        "prefix": "edf",
+        "body": [
+            "export default function ${TM_FILENAME_BASE}($1) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Export default function named after the file"
+    }
+}

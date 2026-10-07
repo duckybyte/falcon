@@ -1,0 +1,43 @@
+name: build and deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'version bump (patch, minor, major, current)'
+        required: true
+        default: 'patch'
+        type: choice
+        options: [patch, minor, major, current]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: prod
+    permissions:
+     contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '23.5.0'
+
+      - run: npm install
+
+      - name: Modify Configurations
+        run: node packaging/modify-config.mjs
+
+      - name: Run Deploy
+        run: npm run deploy -- ${{ github.event.inputs.release_type }}
+        env:
+          github_token: ${{ secrets.URL_GITHUB_TOKEN }}
+          github_repo_url: ${{ secrets.URL_GITHUB_REPO }}
+
+      - name: Save Versions.json
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add versions.json
+          git commit -m "chore: bump version to ${{ github.event.inputs.release_type }} [skip ci]" || echo "No changes to commit"
+          git push

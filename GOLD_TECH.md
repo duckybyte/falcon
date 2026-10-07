@@ -110,5 +110,5 @@ meaning u can do other shit during that free tick space (e.g. breaking the actua
 > - also if the enemy never hits u, you'll just break the spike lmfao because ur free to use other hats and shit
 
 of course if u want to see the practial appilications (or how it is integrated) of this tech just look at falcon's source code lol.
-anyways this doucment was annoying since mega forced me to write this
+anyways this doucment was annoying since the sharkman forced me to write this
 > duck _worst speller in the universe_ man, signing off forever

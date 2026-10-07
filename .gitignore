@@ -1,0 +1,12 @@
+.DS_Store
+dist
+.env
+node_modules
+target
+pkg
+deployment/
+*.jar
+mod-configs.json
+mod-settings.json
+NOTES.md
+gitignore/

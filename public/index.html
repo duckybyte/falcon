@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Falcon - MooMoo.io Client</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link href="https://sandbox.moomoo.io/css/material-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="game-canvas" class="full-screen-page"></canvas>
+
+    <div id="main-menu" class="full-screen-page bg-vignette-shadow">
+        <div class="main-menu-nav">
+            <div class="main-menu-label">
+                <div class="client-name">FAL<span>CON</span></div>
+                <div class="client-version">VDev</div>
+            </div>
+
+            <div class="main-menu-stack">
+                <button id="singleplayer-btn" class="main-menu-btn">Singleplayer</button>
+                <div class="multiplayer-btn-holder">
+                    <button id="multiplayer-btn" class="main-menu-btn">Multiplayer</button>
+
+                    <button title="Automatically selects the most active server in the region you last played."
+                        id="largest-recent-multiplayer-btn" class="multiplayer-btn-addon">
+                        <span class="material-symbols-outlined" style="font-size: 30px;">travel_explore</span>
+                    </button>
+
+                    <button title="Automatically selects the server you last played in." id="recent-multiplayer-btn"
+                        class="multiplayer-btn-addon">
+                        <span class="material-symbols-outlined" style="font-size: 30px;">history</span>
+                    </button>
+                </div>
+                <button id="packet-replayer-btn" class="main-menu-btn">Packet Replayer</button>
+
+                <div class="main-menu-footer-stack">
+                    <button id="open-discord-btn" class="main-menu-footer-btn discord">
+                        <svg width="16" height="16" viewBox="0 -28.5 256 256" fill="currentColor">
+                            <path xmlns="http://www.w3.org/2000/svg"
+                                d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z">
+                            </path>
+                        </svg>
+
+                        Discord
+                    </button>
+                    <button id="quit-client-btn" class="main-menu-footer-btn quit">Quit</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="disclaimer-holder" class="full-screen-page">
+            <div class="disclaimer-card">
+                <div style="margin-top: 25px; color: red; font-size: 48px; text-align: center;">ATTENTION</div>
+                <div style="font-size: 14px; padding-bottom: 20px;">
+                    use your brain and READ<br><br>
+
+                    this mod is FREE<br>
+                    if you purchased this mod from anywhere else, you got scammed<br><br>
+
+                    this mod requires you to have decent ping (it isn't optimized for high ping),
+                    a ping of 80ms should be the highest if u want decent performance<br><br>
+
+                    do NOT use any VPN/ping booster, having that pingDisplay show a lower number than your real ping
+                    will actually HARM the mod since it does use ping for preemptive calculations<br><br>
+
+                    this mod REQUIRES you to have at least 2 nanobraincells when playing<br>
+                    this means that:<br>
+                    - maybe that "Ping: 4000 ms" means that your wifi is holding the mod back???<br>
+                    - or maybe WALKING into 5 BILLION spikes wasn't such a good idea??<br>
+                    - or maybe expecting autoheal to heal 193081209381902839083 dmg???<br>
+                    - nah you'll win ahh dumbass<br><br>
+
+                    the mod amplifies common sense,
+                    but it cannot amplify your lack of intelligence
+                </div>
+            </div>
+
+            <div class="disclaimer-btn-holder">
+                <button class="disclaimer-btn disabled">I don't understand</button>
+                <button id="disclaimer-btn" class="disclaimer-btn">I understand</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="packet-replayer-options-page" class="full-screen-page">
+        <div class="packet-replayer-options-title">Packet Replayer</div>
+
+        <button id="packet-replayer-file-btn" class="packet-replayer-btn">Replay Log</button>
+        <button id="open-logs-folder-btn" class="packet-replayer-btn">Open Logs Folder</button>
+        <button id="clear-all-logs-btn" class="packet-replayer-btn">Clear All Logs</button>
+        <button id="packet-replayer-cancel-btn" class="packet-replayer-btn">Cancel</button>
+
+        <input id="packet-replayer-file-input" accept=".fpl" type="file" style="display: none;">
+    </div>
+
+    <div id="server-browser-page" class="full-screen-page">
+        <div class="server-browser-holder">
+            <div class="server-browser-title">Multiplayer</div>
+            <div id="server-browser">
+                <div id="server-browser-loading-text">Searching for servers...</div>
+            </div>
+            <div class="server-browser-btn-holder">
+                <button id="connection-server-btn" class="server-browser-btn disabled">Join Server</button>
+                <button id="refresh-server-browser-btn" class="server-browser-btn disabled">Refresh</button>
+                <button id="cancel-server-browser-btn" class="server-browser-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="respawn-page" class="full-screen-page">
+        <div id="respawn-page-main-card">
+            <div class="client-name" style="font-size: 138px;">FAL<span>CON</span></div>
+
+            <div class="game-information-holder" style="margin-bottom: 80px;">
+                <div class="game-information-card" style="pointer-events: all;">
+                    <input class="game-information-input" id="username-input" placeholder="Enter Username"
+                        maxlength="15">
+                    <button class="game-information-input disabled" id="enter-game-btn">Join</button>
+                </div>
+
+                <div class="game-information-card">
+                    <div id="skin-selector"></div>
+                </div>
+
+                <div id="turnstile-holder"></div>
+
+                <div id="game-information-metadata"></div>
+            </div>
+        </div>
+
+        <div id="disconnected-page" class="full-screen-page">
+            <div class="disconnected-text">Disconnected</div>
+            <div id="disconnected-reason">No reason provided</div>
+        </div>
+
+        <div id="death-text" class="full-screen-page">YOU DIED</div>
+    </div>
+
+    <div id="game-ui" class="full-screen-page">
+        <div id="ping-display"></div>
+        <div id="activity-list-display"></div>
+        <canvas id="map-canvas"></canvas>
+
+        <div class="upgrade-items-data-holder">
+            <div id="upgrade-holder"></div>
+            <div id="upgrade-counter"></div>
+        </div>
+
+        <div id="alliance-btn">
+            <i class="material-icons"
+                style="font-size: 40px; color: var(--generic-white); vertical-align: middle;">&#xE8D3;</i>
+        </div>
+
+        <div id="alliance-holder" class="full-screen-page" style="display: none;">
+            <div id="alliance-menu"></div>
+            <div id="alliance-action-holder"></div>
+        </div>
+
+        <div id="notification-display"></div>
+
+        <div class="resource-display-holder">
+            <div class="resource-display">
+                <span id="kill-display">0</span>
+                <div class="kill-display-icon"></div>
+            </div>
+
+            <div class="resource-display">
+                <span id="score-display">100</span>
+                <div class="score-display-icon"></div>
+            </div>
+
+            <div class="resource-display">
+                <span id="food-display">100</span>
+                <div class="food-display-icon"></div>
+            </div>
+
+            <div class="resource-display">
+                <span id="wood-display">100</span>
+                <div class="wood-display-icon"></div>
+            </div>
+
+            <div class="resource-display">
+                <span id="stone-display">100</span>
+                <div class="stone-display-icon"></div>
+            </div>
+        </div>
+
+        <div class="leaderboard-holder">
+            <div class="leaderboard-title">Leaderboard</div>
+            <div id="leaderboard">
+                <div class="leaderboard-item">
+                    <div class="leaderboard-label">1. Superman</div>
+                    <div class="leaderboard-score">300.0k</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-holder">
+            <input id="chat-input" autocomplete="off" maxlength="30" placeholder="Enter chat here">
+        </div>
+
+        <div class="bottom-container">
+            <div class="age-display-holder">
+                <div id="age-display">AGE 1</div>
+                <div class="age-bar-holder">
+                    <div id="age-bar"></div>
+                </div>
+            </div>
+
+            <div id="action-bar"></div>
+        </div>
+    </div>
+
+    <div id="packet-replayer-ui" class="full-screen-page">
+        <div class="replayer-action-bar">
+            <div class="timeline-action-bar" style="margin-bottom: 10px;">
+                <div id="paused-icon">
+                    <span class="material-symbols-outlined"> pause </span>
+                </div>
+
+                <button id="replay-speed">x1</button>
+            </div>
+
+            <div class="timeline-action-bar">
+                <div id="duration-now">00:00</div>
+
+                <div class="duration-timeline-slider-holder">
+                    <div id="duration-slider-padding"></div>
+                    <input id="duration-slider" type="range" min="0" step="15" max="15000">
+                </div>
+
+                <div id="duration-total">00:15</div>
+            </div>
+        </div>
+
+        <div id="brain-state-dumper"></div>
+    </div>
+
+    <div id="loading-page" class="full-screen-page">
+        <!-- only purpose is to show a loading circle LMFAO-->
+
+        <div class="loading-circle-spinning"></div>
+    </div>
+</body>
+
+</html>

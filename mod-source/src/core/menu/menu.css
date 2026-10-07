@@ -1,0 +1,496 @@
+.menuItemDescription {
+    color: var(--text-primary);
+    font-size: 11px;
+    box-sizing: border-box;
+    padding-right: 5px;
+    max-width: 525px;
+}
+
+.menuItemLabel {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--generic-white);
+    font-size: 14px;
+}
+
+.noTabTtems {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 16px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+#scriptMenu {
+    position: absolute;
+    left: calc(50% - 450px);
+    top: calc(50% - 300px);
+    width: 950px;
+    height: 600px;
+    background-color: var(--bg-primary);
+    border-radius: 6px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#utilsHolder {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    column-gap: 10px;
+    padding: 11px;
+    top: 0px;
+    left: 226px;
+    border-left: 1px solid var(--border-color);
+    width: calc(100% - 226px);
+    height: 100%;
+    font-size: 22px;
+}
+
+.utilsTitle {
+    font-size: 22px;
+    color: var(--generic-white);
+}
+
+.arrowButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+#tabHolder {
+    position: absolute;
+    left: 0px;
+    width: 225px;
+    height: 100%;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+}
+
+#contentElement {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 17px;
+    left: 225px;
+    width: calc(100% - 225px);
+    height: 100%;
+    row-gap: 17px;
+    overflow-y: scroll;
+}
+
+.menuItem {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    background-color: var(--bg-secondary);
+    border-radius: 4px;
+    transition: all .3s;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.menuItem.menuToggle {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    background: none;
+    cursor: auto;
+    transition: all .3s;
+    box-sizing: content-box;
+    pointer-events: none;
+}
+
+.menuToggle,
+.menuConfigToggle {
+    display: flex;
+    pointer-events: all;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    background-color: var(--bg-secondary);
+    border-radius: 4px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.menuItem.menuToggle:hover,
+.menuItem.menuGroup:hover {
+    transform: scale(1.01);
+}
+
+.menuItemIconHolder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+}
+
+.menuTab {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 38px;
+    color: var(--generic-white);
+    box-sizing: border-box;
+    padding: 10px;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.menuTab:hover {
+    background-color: var(--bg-white);
+}
+
+.activeTab {
+    pointer-events: none;
+    color: var(--theme-primary);
+    border-left: 3px solid var(--theme-primary);
+    background-color: rgba(var(--theme-secondary-rgb), .15);
+}
+
+.bunPadding {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+}
+
+#contentHolderElement {
+    position: absolute;
+    top: 61px;
+    height: calc(100% - 61px);
+    width: 100%;
+}
+
+#headerElement {
+    top: 0px;
+    cursor: move;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#closeMenuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: all;
+    margin-left: auto;
+    margin-right: 15px;
+    width: 25px;
+    height: 25px;
+    background-color: var(--bg-white);
+    border-radius: 6px;
+    z-index: 9999999;
+}
+
+#closeMenuButton:hover {
+    color: var(--theme-secondary);
+    background-color: var(--bg-white-2);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.activeMenuItem {
+    background-color: rgba(var(--theme-secondary-rgb), .13);
+}
+
+.menuItemIconHolder.activeMenuItem {
+    background-color: rgba(var(--theme-secondary-rgb), .27);
+}
+
+.menuItemSettings {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 4px;
+    width: 27px;
+    height: 27px;
+    border-radius: 6px;
+    margin-left: auto;
+    flex-shrink: 0;
+    border: 1px solid var(--text-primary);
+    background-color: var(--bg-white);
+    transition: all .2s;
+}
+
+.menuItemSettings.active {
+    border-color: var(--theme-primary);
+}
+
+.menuItemSettings:hover {
+    transform: scale(1.05);
+}
+
+.menuItemToggleHolder {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 4px;
+    margin-left: auto;
+    flex-shrink: 0;
+    width: 47px;
+    height: 27px;
+    border-radius: 16px;
+    background-color: var(--text-primary);
+    transition: all .6s;
+}
+
+.menuItemToggleCircle {
+    transition: all .3s;
+    width: 19px;
+    height: 19px;
+    border-radius: 100%;
+    background-color: var(--generic-white);
+    transform: translateX(0);
+}
+
+.menuItemToggleCircle.active {
+    transform: translateX(20px);
+}
+
+select {
+    cursor: pointer;
+}
+
+.menuSelector {
+    pointer-events: all;
+    margin-left: auto;
+    margin-right: 7px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 6px;
+    background-color: var(--border-color);
+    color: white;
+    border: none;
+}
+
+.menuSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    overflow: visible;
+    width: 175px;
+    height: 6px;
+    background: var(--theme-primary);
+    cursor: pointer;
+    margin-left: auto;
+    outline: none;
+    border-radius: 3px;
+    pointer-events: all;
+}
+
+.menuSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    box-sizing: border-box;
+    border: 3px solid var(--theme-primary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menuSlider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.menuSlider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    box-sizing: border-box;
+    border: 3px solid var(--theme-primary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menuSlider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+}
+
+.menuSlider::-moz-range-track {
+    background: var(--theme-primary);
+    height: 6px;
+    border-radius: 3px;
+}
+
+.chatLogger {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    border-radius: 6px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding: 12px;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-secondary);
+}
+
+.menuItemGrayOutUnchangable {
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    background-color: rgba(80, 80, 80, 0.35);
+    filter: brightness(0.75);
+    cursor: not-allowed;
+}
+
+.menuItemGrayOutDisabled {
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    background-color: rgba(80, 80, 80, 0.35);
+    filter: grayscale(70%) brightness(0.6);
+    backdrop-filter: blur(.75px);
+    cursor: not-allowed;
+}
+
+.menuItemLockIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    color: var(--generic-white);
+}
+
+.menuConfigUI {
+    display: flex;
+    column-gap: 12px;
+}
+
+.menuConfigUIInput {
+    pointer-events: auto;
+    outline: none;
+    height: 28px;
+    border-radius: 4px;
+    border: none;
+    box-sizing: border-box;
+    padding: 6px;
+    width: 100%;
+}
+
+.menuConfigUIButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    width: 180px;
+    height: 28px;
+    border-radius: 4px;
+    color: var(--generic-white);
+    background-color: var(--border-color);
+}
+
+.menuSettingsIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--generic-white-2);
+}
+
+.menuSettingsIcon.active {
+    color: var(--theme-primary);
+}
+
+.dropdownContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    padding: 4px;
+    padding-top: 7px;
+    width: calc(100% - 30px);
+    border-radius: 0px 0px 4px 4px;
+    transition: all .2s;
+    overflow: visible;
+}
+
+.dropdownContent .menuItem,
+.dropdownContent .menuToggle {
+    background: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.dropdownContent .menuToggle:hover {
+    transform: none;
+}
+
+.menuItemInfoWrapper {
+    pointer-events: all;
+}
+
+.menuItemTooltip {
+    display: none;
+    position: absolute;
+    transform: translateX(-50%);
+    max-width: 200px;
+    bottom: 100%;
+    background-color: var(--bg-primary);
+    padding: 6px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+}
+
+.menuNumberInput {
+    pointer-events: all;
+    margin-left: auto;
+    margin-right: 7px;
+    text-align: right;
+    height: 28px;
+    padding: 4px;
+    border-radius: 6px;
+    width: 60px;
+    background-color: var(--border-color);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 0px 7px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}

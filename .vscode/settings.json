@@ -1,0 +1,6 @@
+{
+    "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    }
+}

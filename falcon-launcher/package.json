@@ -1,0 +1,18 @@
+{
+    "name": "falcon-launcher",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@crxjs/vite-plugin": "^2.0.0-beta.33",
+        "@types/chrome": "^0.2.2",
+        "chrome-types": "^0.1.434",
+        "typescript": "~6.0.2",
+        "vite": "^8.1.4"
+    }
+}
