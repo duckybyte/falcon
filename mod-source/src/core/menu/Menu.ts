@@ -1221,7 +1221,7 @@ export default class Menu {
             </svg>
             <div style="pointer-events: none; margin-left: 3px;">
                 <div style="font-size: 34px; color: var(--generic-white);">FALCON</div>
-                <div style="color: var(--theme-primary); margin-top: -12px;">vDev</div>
+                <div style="color: var(--theme-primary); margin-top: -12px;">v1.0.0-pub</div>
             </div>
         `;
 

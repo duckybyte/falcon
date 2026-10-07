@@ -116,7 +116,7 @@ export default class ModManager {
             packets: 10000,
             isTrapped: false,
             wasTrapped: false,
-            modVersion: "vDev",
+            modVersion: "v1.0.0-pub",
             healingUsed: 9999,
             effectiveBatchWindow: -.5,
             realBatchWindow: -.5,
