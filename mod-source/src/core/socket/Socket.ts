@@ -208,7 +208,7 @@ export default class Socket extends WebSocket {
 
         bufferSlice.set(signature, 0);
         bufferSlice.set(packetData, PacketManager.PACKET_PADDING);
-        this.manager.maskOutcoming(signature, signatureUint);
+        this.manager.maskOutcoming(bufferSlice, signatureUint);
 
         this.send(bufferSlice);
         PacketTracker.add();
